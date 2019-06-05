@@ -7,7 +7,7 @@ def recipe_batches(recipe, ingredients):
     for key in recipe.keys():
         if key not in ingredients:
             return 0
-    return min(map(lambda x, y: y // x, list(recipe.values()), list(ingredients.values())))
+    return min(map(lambda x, y: y // x, recipe.values(), ingredients.values()))
 
 
 if __name__ == '__main__':
