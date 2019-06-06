@@ -7,11 +7,10 @@ import sys
 # recursive solution
 
 
-def eating_cookies(n, cache=[1, 1, 2]):
-    if len(cache) > n:
-        return cache[n]
-    cache.append(sum(cache[-3:]))
-    return eating_cookies(n, cache)
+def eating_cookies(n, cache=None, acc=[1, 1, 2]):
+    if n <= 2:
+        return acc[n]
+    return eating_cookies(n - 1, cache, [*acc[1:], sum(acc)])
 
 
 if __name__ == "__main__":
